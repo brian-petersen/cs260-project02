@@ -5,7 +5,7 @@ html {
 
 body {
     padding-top: 80px;
-    background: url(background.jpg) center no-repeat;
+    background: url(background.jpg) top center no-repeat;
     background-size: cover;
 }
 
