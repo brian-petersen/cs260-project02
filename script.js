@@ -1,4 +1,9 @@
+var baseUrl = 'https://ipapi.co/json/';
+
 $(document).ready(function () {
+    var input = $('input');
+    var button = $('button');
+
     var loading = $('.loading');
     var results = $('.results');
 
@@ -26,30 +31,23 @@ $(document).ready(function () {
     };
 
     setTimeout(function() {
-        $.getJSON('https://ipapi.co/json/', function (data) {
+        $.getJSON(baseUrl, function (data) {
             handler(data);
         });
     }.bind(this), 500);
-    
-    // var dummyData = {
-    //     "ip": "66.219.235.240", //
-    //     "city": "Provo", //
-    //     "region": "Utah", //
-    //     "region_code": "UT",
-    //     "country": "US",
-    //     "country_name": "United States",
-    //     "continent_code": "NA",
-    //     "postal": "84604",
-    //     "latitude": 40.3393,
-    //     "longitude": -111.5709,
-    //     "timezone": "America/Denver",
-    //     "utc_offset": "-0700",
-    //     "country_calling_code": "+1",
-    //     "currency": "USD",
-    //     "languages": "en-US,es-US,haw,fr",
-    //     "asn": "AS29933",
-    //     "org": "Off Campus Telecommunications"
-    // };
 
-    // handler(dummyData);
+    button.on('click', function () {
+        results.hide()
+        loading.show();
+
+        var ip = input.val();
+
+        var url = baseUrl;
+        if (ip != '')
+            url = 'https://ipapi.co/' + ip + '/json/';
+
+        $.getJSON(url, function (data) {
+            handler(data);
+        });
+    });
 });

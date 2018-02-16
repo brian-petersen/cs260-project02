@@ -25,9 +25,54 @@ h1 {
     margin-bottom: 20px;
 }
 
+.form {
+    margin-top: 15px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 70%;
+    border: 1px solid #b8b8b8;
+    padding: 5px 10px;
+    border-radius: 5px 0 0 5px;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+
+button {
+    width: 28%;
+    height: 40px;
+    border: none;
+    background-color: #782a48;
+    font-size: 20px;
+    vertical-align: top;
+    color: white;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0;
+    margin-left: -5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .9;
+}
+
 .loading {
     font-size: 40px;
     text-align: center;
+    height: 210px;
+    position: relative;
+}
+
+.loading i {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 45%;
 }
 
 .results {
@@ -50,14 +95,31 @@ footer {
     margin-top: 50px;
     text-align: center;
     color: #fff;
-    text-shadow: 0 0 10px #000;
+    text-shadow: 1px 1px 1px #000;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 footer a {
-    color: #d2d2d2;
+    color: #cccccc;
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+    input {
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    button {
+        border-radius: 5px;
+        width: 100px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
 }
